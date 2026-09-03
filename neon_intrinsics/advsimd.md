@@ -3417,7 +3417,7 @@ The intrinsics in this section are guarded by the macro ``__ARM_NEON``.
 | <code>poly8x8_t <a href="https://developer.arm.com/architectures/instruction-sets/intrinsics/vget_low_p8" target="_blank">vget_low_p8</a>(poly8x16_t a)</code>         | `a -> Vn.16B`          | `DUP Vd.1D,Vn.D[0]`   | `Vd.8B -> result` | `v7/A32/A64`              |
 | <code>poly16x4_t <a href="https://developer.arm.com/architectures/instruction-sets/intrinsics/vget_low_p16" target="_blank">vget_low_p16</a>(poly16x8_t a)</code>      | `a -> Vn.8H`           | `DUP Vd.1D,Vn.D[0]`   | `Vd.4H -> result` | `v7/A32/A64`              |
 | <code>float64x1_t <a href="https://developer.arm.com/architectures/instruction-sets/intrinsics/vget_low_f64" target="_blank">vget_low_f64</a>(float64x2_t a)</code>    | `a -> Vn.2D`           | `DUP Vd.1D,Vn.D[0]`   | `Vd.1D -> result` | `A64`                     |
-| <code>mfloat8x8_t <a href="https://developer.arm.com/architectures/instruction-sets/intrinsics/vget_low_mf8" target="_blank">vget_low_mf8</a>(mfloat8x16_t a)</code>   | `a -> Vd.16B`          | `NOP`                 | `Vd.8B -> result` | `A64`                     |
+| <code>mfloat8x8_t <a href="https://developer.arm.com/architectures/instruction-sets/intrinsics/vget_low_mf8" target="_blank">vget_low_mf8</a>(mfloat8x16_t a)</code>   | `a -> Vn.16B`          | `DUP Vd.1D,Vn.D[0]`   | `Vd.8B -> result` | `A64`                     |
 
 #### Extract one element from vector
 

@@ -2075,7 +2075,7 @@ float32x2_t vget_low_f32(float32x4_t a)	a -> Vn.4S	DUP Vd.1D,Vn.D[0]	Vd.2S -> re
 poly8x8_t vget_low_p8(poly8x16_t a)	a -> Vn.16B	DUP Vd.1D,Vn.D[0]	Vd.8B -> result	v7/A32/A64
 poly16x4_t vget_low_p16(poly16x8_t a)	a -> Vn.8H	DUP Vd.1D,Vn.D[0]	Vd.4H -> result	v7/A32/A64
 float64x1_t vget_low_f64(float64x2_t a)	a -> Vn.2D	DUP Vd.1D,Vn.D[0]	Vd.1D -> result	A64
-mfloat8x8_t vget_low_mf8(mfloat8x16_t a)	a -> Vd.16B	NOP	Vd.8B -> result	A64
+mfloat8x8_t vget_low_mf8(mfloat8x16_t a)	a -> Vn.16B	DUP Vd.1D,Vn.D[0]	Vd.8B -> result	A64
 int8_t vdupb_lane_s8(int8x8_t vec, __builtin_constant_p(lane))	vec -> Vn.8B;0 <= lane <= 7	DUP Bd,Vn.B[lane]	Bd -> result	A64
 int16_t vduph_lane_s16(int16x4_t vec, __builtin_constant_p(lane))	vec -> Vn.4H;0 <= lane <= 3	DUP Hd,Vn.H[lane]	Hd -> result	A64
 int32_t vdups_lane_s32(int32x2_t vec, __builtin_constant_p(lane))	vec -> Vn.2S;0 <= lane <= 1	DUP Sd,Vn.S[lane]	Sd -> result	A64
