@@ -1918,7 +1918,7 @@ float32x2_t vcreate_f32(uint64_t a)	a -> Xn	INS Vd.D[0],Xn	Vd.2S -> result	v7/A3
 poly8x8_t vcreate_p8(uint64_t a)	a -> Xn	INS Vd.D[0],Xn	Vd.8B -> result	v7/A32/A64
 poly16x4_t vcreate_p16(uint64_t a)	a -> Xn	INS Vd.D[0],Xn	Vd.4H -> result	v7/A32/A64
 float64x1_t vcreate_f64(uint64_t a)	a -> Xn	INS Vd.D[0],Xn	Vd.1D -> result	A64
-mfloat8x8_t vcreate_mf8(uint64_t a)	a -> Xn	FMOV Dd,Xn	Vd.8B -> result	A64
+mfloat8x8_t vcreate_mf8(uint64_t a)	a -> Xn	INS Vd.D[0],Xn	Vd.8B -> result	A64
 int8x8_t vdup_n_s8(int8_t value)	value -> rn	DUP Vd.8B,rn	Vd.8B -> result	v7/A32/A64
 int8x16_t vdupq_n_s8(int8_t value)	value -> rn	DUP Vd.16B,rn	Vd.16B -> result	v7/A32/A64
 int16x4_t vdup_n_s16(int16_t value)	value -> rn	DUP Vd.4H,rn	Vd.4H -> result	v7/A32/A64
@@ -2045,7 +2045,7 @@ float32x4_t vcombine_f32(float32x2_t low, float32x2_t high)	low -> Vn.2S;high ->
 poly8x16_t vcombine_p8(poly8x8_t low, poly8x8_t high)	low -> Vn.8B;high -> Vm.8B	DUP Vd.1D,Vn.D[0];INS Vd.D[1],Vm.D[0]	Vd.16B -> result	v7/A32/A64
 poly16x8_t vcombine_p16(poly16x4_t low, poly16x4_t high)	low -> Vn.4H;high -> Vm.4H	DUP Vd.1D,Vn.D[0];INS Vd.D[1],Vm.D[0]	Vd.8H -> result	v7/A32/A64
 float64x2_t vcombine_f64(float64x1_t low, float64x1_t high)	low -> Vn.1D;high -> Vm.1D	DUP Vd.1D,Vn.D[0];INS Vd.D[1],Vm.D[0]	Vd.2D -> result	A64
-mfloat8x16_t vcombine_mf8(mfloat8x8_t low, mfloat8x8_t high)	low -> Vd.8B;high -> Vn.8B	MOV Vd.D[1],Vn.D[0]	Vd.16B -> result	A64
+mfloat8x16_t vcombine_mf8(mfloat8x8_t low, mfloat8x8_t high)	low -> Vn.8B;high -> Vm.8B	DUP Vd.1D,Vn.D[0];INS Vd.D[1],Vm.D[0]	Vd.16B -> result	A64
 int8x8_t vget_high_s8(int8x16_t a)	a -> Vn.16B	DUP Vd.1D,Vn.D[1]	Vd.8B -> result	v7/A32/A64
 int16x4_t vget_high_s16(int16x8_t a)	a -> Vn.8H	DUP Vd.1D,Vn.D[1]	Vd.4H -> result	v7/A32/A64
 int32x2_t vget_high_s32(int32x4_t a)	a -> Vn.4S	DUP Vd.1D,Vn.D[1]	Vd.2S -> result	v7/A32/A64
@@ -2060,7 +2060,7 @@ float32x2_t vget_high_f32(float32x4_t a)	a -> Vn.4S	DUP Vd.1D,Vn.D[1]	Vd.2S -> r
 poly8x8_t vget_high_p8(poly8x16_t a)	a -> Vn.16B	DUP Vd.1D,Vn.D[1]	Vd.8B -> result	v7/A32/A64
 poly16x4_t vget_high_p16(poly16x8_t a)	a -> Vn.8H	DUP Vd.1D,Vn.D[1]	Vd.4H -> result	v7/A32/A64
 float64x1_t vget_high_f64(float64x2_t a)	a -> Vn.2D	DUP Vd.1D,Vn.D[1]	Vd.1D -> result	A64
-mfloat8x8_t vget_high_mf8(mfloat8x16_t a)	a -> Vn.16B	MOV Dd,Vn.D[1]	Vd.8B -> result	A64
+mfloat8x8_t vget_high_mf8(mfloat8x16_t a)	a -> Vn.16B	DUP Vd.1D,Vn.D[1]	Vd.8B -> result	A64
 int8x8_t vget_low_s8(int8x16_t a)	a -> Vn.16B	DUP Vd.1D,Vn.D[0]	Vd.8B -> result	v7/A32/A64
 int16x4_t vget_low_s16(int16x8_t a)	a -> Vn.8H	DUP Vd.1D,Vn.D[0]	Vd.4H -> result	v7/A32/A64
 int32x2_t vget_low_s32(int32x4_t a)	a -> Vn.4S	DUP Vd.1D,Vn.D[0]	Vd.2S -> result	v7/A32/A64
